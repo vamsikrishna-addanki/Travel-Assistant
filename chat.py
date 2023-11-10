@@ -14,10 +14,8 @@ import config
 import logging
 import time
 import os
-​
-​
+
 def answer(days, start, end, mode) -> str:
-​
     prompt_template = PromptTemplate(template=config.prompt_template, input_variables=["days", "start", "end", "mode"])
     # memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     # doc_chain = LLMChain(
@@ -46,18 +44,3 @@ def answer(days, start, end, mode) -> str:
     #     print('Answer: ' + result["result"])
     #     chat_history.append((prompt, result["result"]))
     return ans
-​
-​
-if __name__ == "__main__":
-    days1 = 4
-    start1 = "chennai"
-    end1 = "bangalore"
-    mode1 = "pubic travels"
-    theme1 = "chill"
-    # days1 = input("days:")
-    # start1 = input("start:")
-    # end1 = input("end:")
-    # mode1 = input("mode:")
-    # theme1 = input("theme:")
-    result = answer(days1, start1, end1, mode1)
-    print(result)
