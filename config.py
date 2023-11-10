@@ -1,3 +1,4 @@
+OPENAI_API_KEY = "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"
 prompt_template = """
 You are a powerful travel planner agent restricted to indian locations:
 so now plan a efficient and well planned trip for {days} days in hand
