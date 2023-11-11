@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-=======
-OPENAI_API_KEY = "sk-bMTL68lEdauH2E2gs9XcT3BlbkFJ29AkluGFFIwFQWhIdDg"
->>>>>>> f95b17f6314488a61445ca5fb1fb0856620c47fa
 prompt_template = """
 You are a powerful travel planner agent restricted to indian locations:
 so now plan a efficient and well planned trip for {days} days in hand
