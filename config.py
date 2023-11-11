@@ -10,11 +10,5 @@ If you dont know about public transporatation dont mention that you dont know , 
 if mode of travel is public transportation please provide the pubic transportation details too in the brackets
 make sure that places has airports and railway stations, or directly mention nearby big place railway station and airport name
 plan the trip based on the {mode} mode of travel.
-<<<<<<< HEAD
 please try to use bold letters and italics where ever necessary mention things in point wise.
 """
-=======
-please try to use bold letters and italics where ever necessary 
-mention things in point wise.
-"""
->>>>>>> f95b17f6314488a61445ca5fb1fb0856620c47fa
