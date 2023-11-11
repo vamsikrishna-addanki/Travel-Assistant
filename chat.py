@@ -14,6 +14,8 @@ import config
 import logging
 import time
 import os
+from dotenv import load_dotenv
+
 
 def answer(days, start, end, mode) -> str:
     prompt_template = PromptTemplate(template=config.prompt_template, input_variables=["days", "start", "end", "mode"])
@@ -30,7 +32,7 @@ def answer(days, start, end, mode) -> str:
     #     memory=memory,
     #     prompt=prompt_template,
     # )
-    model = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0.4, openai_api_key=config.OPENAI_API_KEY)
+    model = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0.4, openai_api_key=os.environ['OPENAI_API_KEY'])
     gen = LLMChain(llm=model, prompt=prompt_template)
     res = gen({"days": days, "start": start, "end": end, "mode": mode})
     ans = res["text"]

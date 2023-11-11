@@ -48,6 +48,10 @@
 import streamlit as st
 import chat
 import time
+import hydralit_components as hc
+from hydralit_components import HyLoader, Loaders
+
+
 st.set_page_config(layout="wide")
 st.title("Less Go :)")
 st.subheader("Travel Planner for travelers")
@@ -67,16 +71,24 @@ with col1:
         mode_options = ["Public Transportation", "Private Transportation"]
         mode = st.selectbox("Transportation Mode", mode_options)
         submit_button = st.form_submit_button(label='Submit')
+        response_section = st.empty()
 # Generate response and display in the scrollable section
+            
 with col2:
-    response_section = st.empty()
+    response_html = st.empty()
+        # with st.spinner("Generating response..."):
+            # output = chat.answer(days, start, end, mode)
     if submit_button:
         with st.spinner("Generating response..."):
+            time.sleep(2)
             output = chat.answer(days, start, end, mode)
+        # with hc.HyLoader("",hc.Loaders.pretty_loaders,index=2, height=2):
+            #   time.sleep(2)
+        #     output = "hey bro" 
         styled_responses = ""
         styled_responses += f"<div style='margin-left: 20px;'>{output}</div>"
         styled_responses += "<hr/>"
-        border_style_col2 = "border: 2px solid #ddd; border-radius: 8px; padding: 10px; max-height: 480px; overflow-y: scroll;"
+        border_style_col2 = "border: 2px solid #ddd; border-radius: 8px; padding: 10px; max-height: 470px; overflow-y: scroll;"
         response_html = f"<div style='{border_style_col2}'>{styled_responses}</div>"
         st.markdown(response_html, unsafe_allow_html=True)
 css = '''
